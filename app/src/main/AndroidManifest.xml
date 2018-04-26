@@ -35,6 +35,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.SourceActivity" />
+        <activity android:name=".ui.DownLoadActivity" />
+        <activity android:name=".ui.RecentlyPlayedActivity" />
+        <activity android:name=".ui.CollectActivity" />
+        <activity android:name=".ui.RemotePlayedActivity" />
+        <activity android:name=".ui.DubbingActivity" />
+        <activity android:name=".ui.EventsActivity" />
+        <activity android:name=".ui.SetActivity" />
+        <activity android:name=".ui.MyActivity" />
     </application>
 
 </manifest>
