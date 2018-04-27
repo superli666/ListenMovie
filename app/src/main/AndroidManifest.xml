@@ -44,6 +44,7 @@
         <activity android:name=".ui.EventsActivity" />
         <activity android:name=".ui.SetActivity" />
         <activity android:name=".ui.MyActivity" />
+        <activity android:name=".ui.MovieListActivity" />
     </application>
 
 </manifest>

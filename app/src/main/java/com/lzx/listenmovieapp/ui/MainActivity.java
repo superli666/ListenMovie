@@ -43,7 +43,7 @@ public class MainActivity extends BaseActivity {
     LinearLayout ll_voice;
 
     @BindView(R.id.rv_list)
-    RecyclerView rv_ist;
+    RecyclerView rv_list;
 
     private List<View> views;
     public static final int[] VIEWPAGERS = {R.mipmap.viewpaer, R.mipmap.viewpaer,
@@ -132,7 +132,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initRecyclerView() {
-        rv_ist.setLayoutManager(new GridLayoutManager(this, 3));
+        rv_list.setLayoutManager(new GridLayoutManager(this, 3));
         mAdapter = new HomeAdapter(R.layout.item_home, mData);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -141,7 +141,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-        rv_ist.setAdapter(mAdapter);
+        rv_list.setAdapter(mAdapter);
     }
 
     private void initViewPager() {

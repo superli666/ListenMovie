@@ -16,27 +16,38 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
+//configurations.all {
+//    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        def requested = details.requested
+//        if (requested.group == 'com.android.support') {
+//            if (!requested.name.startsWith("multidex")) {
+//                details.useVersion '26.1.0'
+//            }
+//        }
+//    }
+//}
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     //gradle 轮播图
     compile('com.alibaba.android:ultraviewpager:1.0.7.6@aar') {
         transitive = true
     }
     compile 'com.youth.banner:banner:1.4.9'
-
     // 状态栏适配
     compile 'com.gyf.barlibrary:barlibrary:2.3.0'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
-
     //注解
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    // 图片加载
+    implementation files('libs/glide-3.7.0.jar')
 }
