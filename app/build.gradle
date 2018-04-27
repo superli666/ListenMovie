@@ -37,17 +37,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
     //gradle 轮播图
     compile('com.alibaba.android:ultraviewpager:1.0.7.6@aar') {
         transitive = true
     }
     compile 'com.youth.banner:banner:1.4.9'
+
     // 状态栏适配
     compile 'com.gyf.barlibrary:barlibrary:2.3.0'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+
     //注解
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
     // 图片加载
     implementation files('libs/glide-3.7.0.jar')
 }

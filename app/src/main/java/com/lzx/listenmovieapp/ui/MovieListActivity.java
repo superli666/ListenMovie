@@ -1,7 +1,8 @@
 package com.lzx.listenmovieapp.ui;
 
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -31,6 +32,9 @@ public class MovieListActivity extends BaseActivity {
     @BindView(R.id.tv_back)
     TextView tv_back;
 
+    @BindView(R.id.refreshLayout)
+    SwipeRefreshLayout refreshLayout;
+
     @BindView(R.id.rv_list)
     RecyclerView rv_list;
 
@@ -48,7 +52,7 @@ public class MovieListActivity extends BaseActivity {
 
     @Override
     protected int setLayoutId() {
-        return R.layout.activity_source_detail;
+        return R.layout.activity_movie_list;
     }
 
     @Override
@@ -70,6 +74,7 @@ public class MovieListActivity extends BaseActivity {
     protected void initView() {
         tv_title.setText(title);
         initRecyclerView();
+        refreshLayout.setColorSchemeResources(R.color.colorPrimary);
     }
 
     private void initRecyclerView() {
@@ -87,6 +92,18 @@ public class MovieListActivity extends BaseActivity {
     @Override
     protected void setListener() {
         tv_back.setOnClickListener(this);
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshLayout.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
     }
 
     @Override
