@@ -99,7 +99,8 @@ public class MovieListActivity extends BaseActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        refreshLayout.setRefreshing(false);
+                        if (refreshLayout != null)
+                            refreshLayout.setRefreshing(false);
                     }
                 }, 2000);
             }
@@ -115,6 +116,14 @@ public class MovieListActivity extends BaseActivity {
             case R.id.tv_back:
                 finish();
                 break;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (refreshLayout != null && refreshLayout.isRefreshing()) {
+            refreshLayout.setRefreshing(false);
         }
     }
 }

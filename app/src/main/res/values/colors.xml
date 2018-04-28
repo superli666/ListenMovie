@@ -12,5 +12,7 @@
 
     <color name="txtMainColor">#222222</color>
     <color name="txtGrayColor">#a0a0a0</color>
+    <color name="skyBlue">#00BFFF</color>
+    <color name="doderBlue">#1E90FF</color>
 
 </resources>
