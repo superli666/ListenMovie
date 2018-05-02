@@ -54,4 +54,6 @@ dependencies {
 
     // 图片加载
     implementation files('libs/glide-3.7.0.jar')
+
+    compile 'com.google.code.gson:gson:2.8.2'
 }
