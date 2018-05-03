@@ -83,7 +83,7 @@ public class DownLoadActivity extends BaseActivity {
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ToastUtil.MyToast(DownLoadActivity.this, "选择播放第" + position + "个");
+                ToastUtil.show(DownLoadActivity.this, "选择播放第" + position + "个");
             }
         });
         rv_list.setAdapter(mAdapter);
@@ -105,7 +105,7 @@ public class DownLoadActivity extends BaseActivity {
                 break;
 
             case R.id.tv_right:
-                ToastUtil.MyToast(this, "管理");
+                ToastUtil.show(this, "管理");
                 break;
         }
     }

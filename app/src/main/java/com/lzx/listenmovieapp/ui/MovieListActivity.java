@@ -83,7 +83,7 @@ public class MovieListActivity extends BaseActivity {
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ToastUtil.MyToast(MovieListActivity.this, "您选择了" + mData.get(position).getName());
+                ToastUtil.show(MovieListActivity.this, "您选择了" + mData.get(position).getName());
             }
         });
         rv_list.setAdapter(mAdapter);
